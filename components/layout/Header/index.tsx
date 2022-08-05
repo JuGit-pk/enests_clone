@@ -1,9 +1,10 @@
+import React, { useState } from "react";
+
+import Container from "../Container";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import Container from "../Container";
-import cn from "classnames";
 import MenuIcon from "/public/assets/svgs/hamburger.svg";
+import cn from "classnames";
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -16,17 +17,23 @@ const Header = () => {
           </div>
           <div className="hidden lg:flex justify-between items-center">
             <Link href="/">
-              <a className="py-2 px-4 ">Catagories</a>
+              <a className="hover:text-white/80 transition-all py-2 px-4 ">
+                Catagories
+              </a>
             </Link>
             <div className="">
               <span>
                 <Link href="/">
-                  <a className="py-2 px-4 ">Login</a>
+                  <a className="hover:text-white/80 transition-all py-2 px-4 ">
+                    Login
+                  </a>
                 </Link>
               </span>
               <span>|</span>
               <Link href="/">
-                <a className="py-2 px-4 ">Register</a>
+                <a className="hover:text-white/80 transition-all py-2 px-4 ">
+                  Register
+                </a>
               </Link>
             </div>
             <div className="text-sm space-x-4">
@@ -62,17 +69,23 @@ const Header = () => {
           >
             <div className="flex flex-col justify-between">
               <Link href="/">
-                <a className="py-2 px-4 ">Catagories</a>
+                <a className="hover:text-white/80 transition-all py-2 px-4 ">
+                  Catagories
+                </a>
               </Link>
               <div className="space-x-0">
                 <span>
                   <Link href="/">
-                    <a className="py-2 px-4 ">Login</a>
+                    <a className="hover:text-white/80 transition-all py-2 px-4 ">
+                      Login
+                    </a>
                   </Link>
                 </span>
                 <span>|</span>
                 <Link href="/">
-                  <a className="py-2 px-4 ">Register</a>
+                  <a className="hover:text-white/80 transition-all py-2 px-4 ">
+                    Register
+                  </a>
                 </Link>
               </div>
               <div className="text-sm space-x-4 p-4">
