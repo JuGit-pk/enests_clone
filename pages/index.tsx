@@ -1,3 +1,4 @@
+import About from "../components/home/About";
 import Header from "../components/layout/Header";
 import Hero from "../components/home/Hero";
 import Layout from "../components/layout/Layout";
@@ -10,6 +11,7 @@ const Home: NextPage = () => {
         <Header />
         <Hero />
       </div>
+      <About />
     </Layout>
   );
 };

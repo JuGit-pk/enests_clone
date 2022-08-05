@@ -1,5 +1,6 @@
+import { Head, Html, Main, NextScript } from "next/document";
+
 import React from "react";
-import { Html, Head, Main, NextScript } from "next/document";
 
 const Document = () => {
   return (
@@ -13,6 +14,10 @@ const Document = () => {
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
           rel="stylesheet"
         />
       </Head>
