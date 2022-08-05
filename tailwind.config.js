@@ -6,8 +6,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      lato: "Lato, sans-serif",
-      raleway: "Raleway, sans-serif",
+      fontFamily: {
+        lato: "Lato, sans-serif",
+        raleway: "Raleway, sans-serif",
+      },
+      colors: {
+        primary: "#4d2573",
+      },
     },
   },
   plugins: [],

@@ -6,11 +6,10 @@ import Hero from "../components/home/Hero";
 const Home: NextPage = () => {
   return (
     <Layout>
-      {/* <div className="bg-[url('/images/cta-bg.jpg')] text-white">
+      <div className="bg-[url('/assets/images/cta-bg.jpg')] text-white">
         <Header />
-        <Hero />
-      </div> */}
-      <h1>Hero here</h1>
+        {/* <Hero /> */}
+      </div>
     </Layout>
   );
 };
