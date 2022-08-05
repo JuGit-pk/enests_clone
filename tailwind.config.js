@@ -7,8 +7,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        lato: "Lato, sans-serif",
-        raleway: "Raleway, sans-serif",
+        lato: ["Lato", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"],
+        rubik: ["Rubik", "sans-serif"],
       },
       colors: {
         primary: "#4d2573",

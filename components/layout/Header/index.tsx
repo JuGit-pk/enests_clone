@@ -8,7 +8,7 @@ import MenuIcon from "/public/assets/svgs/hamburger.svg";
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (
-    <header className="w-full py-[22px] border-b-2 font-light">
+    <header className="w-full py-[22px] border-b border-white/40 font-light">
       <Container>
         <div className="flex justify-between items-center">
           <div className="">
