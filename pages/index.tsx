@@ -3,6 +3,7 @@ import Hero from "../components/home/Hero";
 import Layout from "../components/layout/Layout";
 import type { NextPage } from "next";
 import BrowseCategories from "../components/home/BrowseCategories";
+import CompanyProfile from "../components/home/CompanyProfile";
 
 const Home: NextPage = () => {
   return (
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
         <Hero />
       </div>
       <BrowseCategories />
+      <CompanyProfile />
     </Layout>
   );
 };
