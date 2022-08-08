@@ -13,7 +13,7 @@ const BrowseCategories = () => {
         <Category />
         <a
           href=""
-          className="border-[2px] border-[#4d2573] py-2 px-6 inline-block bg-white text-[#4d2573] text-sm font-semibold cursor-pointer text-center rounded-[30px] mt-[50px]"
+          className="border-[2px] border-[#4d2573] py-2 px-6 inline-block bg-white text-[#4d2573]  hover:text-white hover:bg-[#4d2573] text-sm font-semibold cursor-pointer text-center rounded-[30px] mt-[50px] transition-all"
         >
           Load More
         </a>

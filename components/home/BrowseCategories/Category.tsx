@@ -106,7 +106,7 @@ const Category = () => {
           </h4>
           <a
             href=""
-            className="py-2 px-6 mt-[15px] border-[2px] border-[#4d2573] inline-block text-[#4d2573] text-sm cursor-pointer font-semibold rounded-[30px]"
+            className="py-2 px-6 mt-[15px] border-[2px] border-[#4d2573] inline-block text-[#4d2573] hover:text-white hover:bg-[#4d2573] text-sm cursor-pointer font-semibold rounded-[30px] transition-all"
           >
             Browse
           </a>

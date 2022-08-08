@@ -14,7 +14,7 @@ const CompanyProfile = () => {
           </p>
           <a
             href=""
-            className="text-white bg-[#4d2573] border-[#4d2573] border-[2px] text-sm cursor-pointer font-semibold rounded-[30px] py-2 px-6 shadow-lg mt-10 inline-block"
+            className="text-white bg-[#4d2573] border-[#4d2573] border-[2px]  hover:text-[#4d2573] hover:bg-white transition-all text-sm cursor-pointer font-semibold rounded-[30px] py-2 px-6 shadow-lg mt-10 inline-block"
           >
             Get Listed
           </a>

@@ -86,7 +86,7 @@ const Footer = () => {
             />
             <button
               type="submit"
-              className=" w-12 h-10 bg-white text-[#4d2573] absolute top-[1px] right-[1px] rounded-r-md"
+              className=" w-12 h-10 bg-white text-[#4d2573]  hover:text-white hover:bg-[#4d2573] transition-all absolute top-[1px] right-[1px] rounded-r-md"
             >
               <span className="mx-auto inline-block relative top-1">
                 <FaTelegramPlane />

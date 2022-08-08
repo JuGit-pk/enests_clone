@@ -4,6 +4,7 @@ import Layout from "../components/layout/Layout";
 import type { NextPage } from "next";
 import BrowseCategories from "../components/home/BrowseCategories";
 import CompanyProfile from "../components/home/CompanyProfile";
+import BlogPost from "../components/home/BlogPost";
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
       </div>
       <BrowseCategories />
       <CompanyProfile />
+      <BlogPost />
     </Layout>
   );
 };
