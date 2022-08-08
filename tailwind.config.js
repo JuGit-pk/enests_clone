@@ -18,6 +18,8 @@ module.exports = {
       backgroundImage: {
         footer:
           'linear-gradient(to right, rgba(77, 37, 115, 0.7), rgba(77, 37, 115, 0.7)),url("/assets/images/home.jpg")',
+        categoriesBg:
+          'linear-gradient(to right, rgba(77, 37, 115, 0.7), rgba(77, 37, 115, 0.7)),url("/assets/images/categories-bg.jpg")',
       },
     },
   },

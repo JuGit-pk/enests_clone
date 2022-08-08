@@ -2,6 +2,7 @@ import Header from "../components/layout/Header";
 import Hero from "../components/home/Hero";
 import Layout from "../components/layout/Layout";
 import type { NextPage } from "next";
+import BrowseCategories from "../components/home/BrowseCategories";
 
 const Home: NextPage = () => {
   return (
@@ -10,6 +11,7 @@ const Home: NextPage = () => {
         <Header />
         <Hero />
       </div>
+      <BrowseCategories />
     </Layout>
   );
 };
