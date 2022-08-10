@@ -12,8 +12,17 @@ import Container from "../../layout/Container";
 import Image from "next/image";
 import LocationIcon from "../../../public/assets/images/loc-icon.png";
 import React from "react";
+interface IHeroProps {
+  mainHeading: string;
+  subHeading: string;
+  textUnderSearchBox: string;
+}
 
-const Hero = () => {
+const Hero: React.FC<IHeroProps> = ({
+  mainHeading,
+  subHeading,
+  textUnderSearchBox,
+}) => {
   const categories = [
     {
       title: "marketing",
@@ -30,11 +39,9 @@ const Hero = () => {
     <Container className="text-center pt-7 pb-1 lg:pt-40 lg:h-[89vh]">
       <div className=" mb-10 sm:mb-14 font-raleway">
         <h1 className=" text-4xl leading-[50px] md:text-[56px] font-bold uppercase md:leading-[60px]">
-          Research & Find Top Companies
+          {mainHeading}
         </h1>
-        <p className="text-lg md:text-2xl mt-3">
-          Read reviews. Write reviews. Make Buying Decisions.
-        </p>
+        <p className="text-lg md:text-2xl mt-3">{subHeading}</p>
       </div>
       <div className="w-full bg-white/40 rounded-md my-4 p-4 text-black space-x-0 space-y-1 md:space-y-0 md:space-x-4 flex justify-center items-center flex-col md:flex-row lg:max-w-5xl mx-auto">
         <input
@@ -72,7 +79,7 @@ const Hero = () => {
           Search
         </button>
       </div>
-      <p className=" text-lg">Browse Businesses by Top & Trending Categories</p>
+      <p className=" text-lg">{textUnderSearchBox}</p>
       <div className="flex flex-wrap gap-3 justify-center pt-8 pb-4">
         {categories.map(({ children, title }, i) => (
           <CategoryBox title={title} key={title + i}>
