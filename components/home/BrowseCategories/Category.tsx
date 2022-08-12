@@ -1,58 +1,23 @@
 import React from "react";
 import Image from "next/image";
-import { FaHeartbeat } from "react-icons/fa";
-import { FaCartPlus } from "react-icons/fa";
-import { FaBullhorn } from "react-icons/fa";
-import { FaLaptopCode } from "react-icons/fa";
-import { BsPaletteFill } from "react-icons/bs";
-import { FaHandsHelping } from "react-icons/fa";
-import { FaChalkboardTeacher } from "react-icons/fa";
-import { FaBusinessTime } from "react-icons/fa";
 
-const categories = [
-  {
-    title: "health",
-    icon: <FaHeartbeat className="fill-white" />,
-    imageSrc: "/assets/images/categories.jpg",
-  },
-  {
-    title: "health",
-    icon: <FaCartPlus className="fill-white" />,
-    imageSrc: "/assets/images/categories.jpg",
-  },
-  {
-    title: "health",
-    icon: <FaBullhorn className="fill-white" />,
-    imageSrc: "/assets/images/categories.jpg",
-  },
-  {
-    title: "health",
-    icon: <FaLaptopCode className="fill-white" />,
-    imageSrc: "/assets/images/categories.jpg",
-  },
-  {
-    title: "health",
-    icon: <BsPaletteFill className="fill-white" />,
-    imageSrc: "/assets/images/categories.jpg",
-  },
-  {
-    title: "health",
-    icon: <FaHandsHelping className="fill-white" />,
-    imageSrc: "/assets/images/categories.jpg",
-  },
-  {
-    title: "health",
-    icon: <FaChalkboardTeacher className="fill-white" />,
-    imageSrc: "/assets/images/categories.jpg",
-  },
-  {
-    title: "health",
-    icon: <FaBusinessTime className="fill-white" />,
-    imageSrc: "/assets/images/categories.jpg",
-  },
-];
+interface ICategoryProps {
+  categories: [
+    {
+      id: string;
+      name: string;
+      shortName: string;
+      slug: string;
+      icon: string;
+      coverImage: {
+        url: string;
+        alternativeText: string;
+      };
+    }
+  ];
+}
 
-const Category = () => {
+const Category = ({ categories }: ICategoryProps) => {
   const getIconColorClass = (number: number) => {
     let iconClass = "bg-[#36baff]";
 
@@ -83,13 +48,16 @@ const Category = () => {
   return (
     <div className="mt-[30px] grid gap-[30px] md:grid-cols-2 lg:grid-cols-4">
       {categories.map((category, index) => (
-        <div className="bg-white text-center pb-[30px] rounded overflow-hidden">
+        <div
+          key={index}
+          className="bg-white text-center pb-[30px] rounded overflow-hidden"
+        >
           <div className="relative w-full h-[110px]">
             <Image
-              src={category.imageSrc}
+              src={category?.coverImage?.url}
               alt=""
               layout="fill"
-              className=" object-cover object-top"
+              className="hover:scale-110 transition-all duration-500 ease-in-out object-cover object-top"
             />
           </div>
           <div className="-mt-[25px] z-10 relative">
@@ -98,11 +66,14 @@ const Category = () => {
                 index + 1
               )}`}
             >
-              {category.icon}
+              <i
+                className={`${category.icon} text-white`}
+                aria-hidden="true"
+              ></i>
             </div>
           </div>
           <h4 className="text-xl text-[#333] mt-[10px] capitalize">
-            {category.title}
+            {category.name}
           </h4>
           <a
             href=""

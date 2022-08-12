@@ -1,12 +1,3 @@
-import {
-  FaBullhorn,
-  FaCartPlus,
-  FaHandsHelping,
-  FaPizzaSlice,
-  FaPlaneDeparture,
-  FaRegKeyboard,
-} from "react-icons/fa";
-
 import CategoryBox from "../CategoryBox";
 import Container from "../../layout/Container";
 import Image from "next/image";
@@ -16,25 +7,23 @@ interface IHeroProps {
   mainHeading: string;
   subHeading: string;
   textUnderSearchBox: string;
+  categories: [
+    {
+      id: string;
+      name: string;
+      shortName: string;
+      slug: string;
+      icon: string;
+    }
+  ];
 }
 
 const Hero: React.FC<IHeroProps> = ({
+  categories,
   mainHeading,
   subHeading,
   textUnderSearchBox,
 }) => {
-  const categories = [
-    {
-      title: "marketing",
-      children: <FaBullhorn size="1.7rem" />,
-    },
-    { title: "travel", children: <FaPlaneDeparture size="1.7rem" /> },
-    { title: "food", children: <FaPizzaSlice size="1.7rem" /> },
-    { title: "shopping", children: <FaCartPlus size="1.7rem" /> },
-    { title: "services", children: <FaHandsHelping size="1.7rem" /> },
-    { title: "writing", children: <FaRegKeyboard size="1.7rem" /> },
-  ];
-
   return (
     <Container className="text-center pt-7 pb-1 lg:pt-40 lg:h-[89vh]">
       <div className=" mb-10 sm:mb-14 font-raleway">
@@ -81,9 +70,9 @@ const Hero: React.FC<IHeroProps> = ({
       </div>
       <p className=" text-lg">{textUnderSearchBox}</p>
       <div className="flex flex-wrap gap-3 justify-center pt-8 pb-4">
-        {categories.map(({ children, title }, i) => (
-          <CategoryBox title={title} key={title + i}>
-            {children}
+        {categories?.map((category, i) => (
+          <CategoryBox title={category.name} key={category.name + i}>
+            {category.icon}
           </CategoryBox>
         ))}
       </div>

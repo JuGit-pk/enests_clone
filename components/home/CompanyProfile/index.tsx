@@ -1,16 +1,26 @@
 import React from "react";
 
-const CompanyProfile = () => {
+interface ICompanyProfile {
+  listingTitle: string;
+  listingDescription: string;
+  listingImage: {
+    url: string;
+    alternativeText: string;
+  };
+}
+
+const CompanyProfile = ({
+  listingDescription,
+  listingTitle,
+  listingImage,
+}: ICompanyProfile) => {
   return (
     <section className="bg-companyProfileBg bg-cover bg-no-repeat bg-top py-9 px-4 ">
       <div className="flex flex-col md:flex-row gap-4 items-center max-w-[520px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] mx-auto">
         <div className="flex-1">
-          <h1 className="text-[30px] font-medium capitalize">
-            Want to Create a Company Profile?
-          </h1>
+          <h1 className="text-[30px] font-medium capitalize">{listingTitle}</h1>
           <p className="text-base leading-6 text-[#505050]">
-            It’s time to get found by the right customers! Submit your company
-            and boost your business online.
+            {listingDescription}
           </p>
           <a
             href=""
@@ -21,9 +31,9 @@ const CompanyProfile = () => {
         </div>
         <div className="relative flex-1">
           <img
-            src="/assets/images/company-profile.png"
+            src={listingImage?.url}
             className="w-[420px] h-[332px] mx-auto"
-            alt="company-profile"
+            alt={listingImage?.alternativeText}
           />
         </div>
       </div>

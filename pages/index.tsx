@@ -6,30 +6,50 @@ import Header from "../components/layout/Header";
 import Hero from "../components/home/Hero";
 import Layout from "../components/layout/Layout";
 import type { NextPage } from "next";
-
 import { useQuery } from "@apollo/client";
 import { HOME_PAGE_QUERY } from "@graphql/queries/getHomePage";
-import cn from "classnames";
 import ReviewsContainer from "../components/home/ReviewsContainer";
 const Home: NextPage = () => {
   const { data, loading, error } = useQuery(HOME_PAGE_QUERY);
-  console.log(data, "data");
   return (
-    <Layout>
-      <div className="bg-[url('/assets/images/cta-bg.jpg')] text-white bg-no-repeat bg-cover">
-        <Header />
-        <Hero
-          mainHeading={data?.home?.mainHeading}
-          subHeading={data?.home?.subHeading}
-          textUnderSearchBox={data?.home?.textUnderSearchBox}
-        />
-      </div>
-      <About />
-      <BrowseCategories />
-      <ReviewsContainer />
-      <CompanyProfile />
-      <BlogPost />
-    </Layout>
+    <>
+      {loading ? (
+        <p>Loading</p>
+      ) : (
+        <Layout>
+          <div className="bg-[url('/assets/images/cta-bg.jpg')] text-white bg-no-repeat bg-cover">
+            <Header />
+            <Hero
+              categories={data?.categories}
+              mainHeading={data?.home?.mainHeading}
+              subHeading={data?.home?.subHeading}
+              textUnderSearchBox={data?.home?.textUnderSearchBox}
+            />
+          </div>
+          <About
+            aboutImage={data?.home?.aboutImage}
+            aboutHeading={data?.home?.aboutHeading}
+            aboutDescription={data?.home?.aboutDescription}
+          />
+          <BrowseCategories
+            categoryTitle={data?.home?.categoryTitle}
+            categoryDescription={data?.home?.categoryDescription}
+            categories={data?.popularCategories}
+          />
+          <ReviewsContainer />
+          <CompanyProfile
+            listingTitle={data?.home?.listingTitle}
+            listingDescription={data?.home?.listingDescription}
+            listingImage={data?.home?.listingImage}
+          />
+          <BlogPost
+            blogTitle={data?.home?.blogTitle}
+            blogDescription={data?.home?.blogDescription}
+            posts={data?.posts}
+          />
+        </Layout>
+      )}
+    </>
   );
 };
 

@@ -13,7 +13,12 @@ const Header = () => {
       <Container>
         <div className="flex justify-between items-center">
           <div className="">
-            <Image src="/images/logo.png" alt="" width="183px" height="41px" />
+            <Image
+              src="/assets/images/logo.png"
+              alt=""
+              width="183px"
+              height="41px"
+            />
           </div>
           <div className="hidden lg:flex justify-between items-center">
             <Link href="/">

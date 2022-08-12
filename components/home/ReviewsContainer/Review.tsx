@@ -44,8 +44,11 @@ const reviewData = [
 const Review = () => {
   return (
     <div className="mt-10 grid gap-8">
-      {reviewData.map((review) => (
-        <div className="flex gap-[14px] py-5 px-[15px] items-center border border-[#dfdede] rounded-[5px]">
+      {reviewData.map((review, i) => (
+        <div
+          key={i}
+          className="flex gap-[14px] py-5 px-[15px] items-center border border-[#dfdede] rounded-[5px]"
+        >
           <div>
             <div className="w-[94px] h-[94px] text-white bg-[#4d2573] rounded-full flex justify-center items-center">
               <span className="text-[32px] leading-10">FF</span>

@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { GRAPHQL_URL } from "@config/constants";
+import "../public/assets/fontawesome/css/all.css";
 import {
   InMemoryCache,
   gql,
