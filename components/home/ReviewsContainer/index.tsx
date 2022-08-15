@@ -1,5 +1,5 @@
 import React from "react";
-import Review from "./Review";
+import ReviewCardList from "./ReviewCardList";
 
 const ReviewsContainer = () => {
   return (
@@ -10,7 +10,7 @@ const ReviewsContainer = () => {
           Browse reviews from 100% verified users to choose the right company
           with confidence.
         </p>
-        <Review />
+        <ReviewCardList />
       </div>
     </div>
   );

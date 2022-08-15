@@ -6,9 +6,11 @@ import Header from "../components/layout/Header";
 import Hero from "../components/home/Hero";
 import Layout from "../components/layout/Layout";
 import type { NextPage } from "next";
-import { useQuery } from "@apollo/client";
+
 import { HOME_PAGE_QUERY } from "@graphql/queries/getHomePage";
+import cn from "classnames";
 import ReviewsContainer from "../components/home/ReviewsContainer";
+import { useQuery } from "@apollo/client";
 const Home: NextPage = () => {
   const { data, loading, error } = useQuery(HOME_PAGE_QUERY);
   return (

@@ -4,3 +4,8 @@ export interface IHomePageQuery {
   mainHeading: string;
   subHeading: string;
 }
+export interface IReview {
+  reviewSite: string;
+  reviewMsg: string;
+  date: string;
+}

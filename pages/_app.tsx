@@ -1,13 +1,17 @@
 import "../styles/globals.css";
-import type { AppProps } from "next/app";
-import { GRAPHQL_URL } from "@config/constants";
+import "swiper/css";
+import "swiper/css/autoplay";
+
 import "../public/assets/fontawesome/css/all.css";
 import {
-  InMemoryCache,
-  gql,
   ApolloClient,
   ApolloProvider,
+  InMemoryCache,
+  gql,
 } from "@apollo/client";
+
+import type { AppProps } from "next/app";
+import { GRAPHQL_URL } from "@config/constants";
 
 const client = new ApolloClient({
   uri: GRAPHQL_URL,
