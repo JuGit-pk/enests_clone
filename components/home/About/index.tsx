@@ -1,6 +1,7 @@
 import Container from "../../layout/Container";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 interface IAboutProps {
   aboutHeading: string;
@@ -29,9 +30,11 @@ const About = ({ aboutImage, aboutDescription, aboutHeading }: IAboutProps) => {
           {aboutHeading}
         </h2>
         <p className=" mt-6 lg:mt-5 text-[#505050]">{aboutDescription}</p>
-        <button className="bg-primary text-white rounded-full hover:bg-white hover:text-primary py-2 px-6 border-2 border-transparent hover:border-2 hover:border-primary transition-all mt-12 md:mt-10 text-sm font-semibold">
-          Read More
-        </button>
+        <Link href="/about">
+          <a className="bg-primary inline-block text-white rounded-full hover:bg-white hover:text-primary py-2 px-6 border-2 border-transparent hover:border-2 hover:border-primary transition-all mt-12 md:mt-10 text-sm font-semibold">
+            Read More
+          </a>
+        </Link>
       </div>
     </Container>
   );

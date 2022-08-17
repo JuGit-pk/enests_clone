@@ -24,7 +24,7 @@ interface IPost {
 const Post: React.FC<IPost> = ({ posts }) => {
   return (
     <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-[30px]">
-      {posts.map((post) => (
+      {posts?.map((post) => (
         <div
           key={post.id}
           className="text-left border border-[#dfdede] pb-3 rounded-[5px] overflow-hidden"

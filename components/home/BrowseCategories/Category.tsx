@@ -47,7 +47,7 @@ const Category = ({ categories }: ICategoryProps) => {
   };
   return (
     <div className="mt-[30px] grid gap-[30px] md:grid-cols-2 lg:grid-cols-4">
-      {categories.map((category, index) => (
+      {categories?.map((category, index) => (
         <div
           key={index}
           className="bg-white text-center pb-[30px] rounded overflow-hidden"
