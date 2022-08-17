@@ -13,12 +13,16 @@ const Navbar = () => {
       <Container>
         <div className="flex justify-between items-center">
           <div className="">
-            <Image
-              src="/assets/images/logo.png"
-              alt=""
-              width="183px"
-              height="41px"
-            />
+            <Link href="/">
+              <a>
+                <Image
+                  src="/assets/images/logo.png"
+                  alt=""
+                  width="183px"
+                  height="41px"
+                />
+              </a>
+            </Link>
           </div>
           <div className="hidden lg:flex justify-between items-center">
             <Link href="/categories">
