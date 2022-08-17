@@ -5,7 +5,6 @@ export const CATEGORIES_QUERY = gql`
     categories {
       id
       name
-      shortName
       slug
       icon
       subCategories {

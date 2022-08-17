@@ -2,15 +2,14 @@ import About from "../components/home/About";
 import BlogPost from "../components/home/BlogPost";
 import BrowseCategories from "../components/home/BrowseCategories";
 import CompanyProfile from "../components/home/CompanyProfile";
-import Header from "../components/layout/Header";
 import Hero from "../components/home/Hero";
 import Layout from "../components/layout/Layout";
 import type { NextPage } from "next";
 
 import { HOME_PAGE_QUERY } from "@graphql/queries/getHomePage";
-import cn from "classnames";
 import ReviewsContainer from "../components/home/ReviewsContainer";
 import { useQuery } from "@apollo/client";
+import Navbar from "../components/layout/Header/Navbar";
 const Home: NextPage = () => {
   const { data, loading, error } = useQuery(HOME_PAGE_QUERY);
   return (
@@ -20,7 +19,7 @@ const Home: NextPage = () => {
       ) : (
         <Layout>
           <div className="bg-[url('/assets/images/cta-bg.jpg')] text-white bg-no-repeat bg-cover">
-            <Header />
+            <Navbar />
             <Hero
               categories={data?.categories}
               mainHeading={data?.home?.mainHeading}

@@ -6,13 +6,20 @@ import { useQuery } from "@apollo/client";
 import { CATEGORIES_QUERY } from "@graphql/queries/getCategories";
 import Link from "next/link";
 import Layout from "@components/layout/Layout";
+import Header from "@components/layout/Header";
+import { ICategory } from "types";
+
+interface IQueryResponse {
+  categories: ICategory[];
+}
 const Categories = () => {
-  const { data, loading, error } = useQuery(CATEGORIES_QUERY);
+  const { data, loading, error } = useQuery<IQueryResponse>(CATEGORIES_QUERY);
 
   return (
     <Layout>
+      <Header heading="Categories" subHeading="Categories" />
       <Container>
-        <main className="h-full w-full inline-grid  md:grid md:grid-cols-3 md:gap-x-8 font-lato text-secondary-400">
+        <main className="h-full w-full inline-grid  md:grid md:grid-cols-3 md:gap-x-8 font-lato text-secondary-400 py-20">
           <Tab.Group>
             <aside className="w-full py-8 px-4 shadow-lg col-span-2 md:col-span-1">
               <h3 className=" text-2xl font-lato text-secondary-400 mb-10 md:mb-0">
@@ -68,7 +75,7 @@ const Categories = () => {
                         </div>
                         <div className="pt-4 grid grid-cols-2 xl:grid-cols-3 gap-x-3">
                           {subCategories &&
-                            subCategories.map(({ name, icon }, i) => (
+                            subCategories.map(({ name }, i) => (
                               <Link key={i} href="/">
                                 <a>
                                   <p className="mb-3 hover:underline hover:text-primary transition-all">
@@ -94,3 +101,4 @@ export default Categories;
 
 // TODO : Add slugs
 // TODO : Add responsiveness
+// TODO : replace header Image

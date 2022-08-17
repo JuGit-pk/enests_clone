@@ -5,11 +5,18 @@ import Footer from "../Footer";
 interface ILayoutProps {
   children: React.ReactNode;
   className?: string;
+  seoTitle?: string;
+  seoDescription?: string;
 }
-const Layout: React.FC<ILayoutProps> = ({ children, className }) => {
+const Layout: React.FC<ILayoutProps> = ({
+  children,
+  className,
+  seoDescription,
+  seoTitle,
+}) => {
   return (
     <main className={cn("", className || "")}>
-      <Seo />
+      <Seo description={seoDescription} title={seoTitle} />
       {children}
       <Footer />
     </main>
