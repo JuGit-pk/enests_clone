@@ -1,17 +1,17 @@
-import About from "../components/home/About";
-import BlogPost from "../components/home/BlogPost";
-import BrowseCategories from "../components/home/BrowseCategories";
-import CompanyProfile from "../components/home/CompanyProfile";
-import Hero from "../components/home/Hero";
-import Layout from "../components/layout/Layout";
-import type { NextPage } from "next";
+import About from '../components/home/About'
+import BlogPost from '../components/home/BlogPost'
+import BrowseCategories from '../components/home/BrowseCategories'
+import CompanyProfile from '../components/home/CompanyProfile'
+import Hero from '../components/home/Hero'
+import Layout from '../components/layout/Layout'
+import type { NextPage } from 'next'
 
-import { HOME_PAGE_QUERY } from "@graphql/queries/getHomePage";
-import ReviewsContainer from "../components/home/ReviewsContainer";
-import { useQuery } from "@apollo/client";
-import Navbar from "../components/layout/Header/Navbar";
+import { HOME_PAGE_QUERY } from '@graphql/queries/getHomePage'
+import ReviewsContainer from '../components/home/ReviewsContainer'
+import { useQuery } from '@apollo/client'
+import Navbar from '../components/layout/Header/Navbar'
 const Home: NextPage = () => {
-  const { data, loading, error } = useQuery(HOME_PAGE_QUERY);
+  const { data, loading } = useQuery(HOME_PAGE_QUERY)
   return (
     <>
       {loading ? (
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
         </Layout>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
