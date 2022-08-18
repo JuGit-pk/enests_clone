@@ -19,16 +19,16 @@ const Categories = () => {
     <Layout>
       <Header heading='Categories' subHeading='Categories' />
       <Container>
-        <main className='h-full w-full inline-grid  md:grid md:grid-cols-3 md:gap-x-8 font-lato text-secondary-400 py-20'>
+        <main className='h-full w-full inline-grid  md:grid md:grid-cols-3 md:gap-x-8 font-lato text-secondary-500 py-20'>
           <Tab.Group>
             <aside className='w-full py-8 px-4 shadow-lg col-span-2 md:col-span-1'>
-              <h3 className=' text-2xl font-lato text-secondary-400 mb-10 md:mb-0'>
+              <h3 className=' text-2xl font-lato text-secondary-500 mb-10 md:mb-0'>
                 View Category
               </h3>
 
               {/* <Tab.List
               as="select"
-              className="md:hidden w-full mt-4 focus:ring-primary ring-1 outline-none ring-secondary-400 py-1 rounded-sm"
+              className="md:hidden w-full mt-4 focus:ring-primary ring-1 outline-none ring-secondary-500 py-1 rounded-sm"
               >
               {data &&
                 data.categories &&
@@ -47,7 +47,7 @@ const Categories = () => {
                       key={idx}
                       className={({ selected }) =>
                         cn(
-                          'w-full py-3 px-4 text-secondary-400 text-left',
+                          'w-full py-3 px-4 text-secondary-500 text-left',
                           selected ? 'bg-primary text-white outline-none' : ''
                         )
                       }
@@ -67,7 +67,7 @@ const Categories = () => {
               <Tab.Panels>
                 {data &&
                   data.categories &&
-                  data.categories.map(({ subCategories, name }, i) => (
+                  data.categories.map(({ subCategories, name, slug }, i) => (
                     <Tab.Panel key={i}>
                       <div className='py-10 px-4 shadow-lg'>
                         <div className='pb-8 border-b border-secondary-200'>
@@ -75,8 +75,8 @@ const Categories = () => {
                         </div>
                         <div className='pt-4 grid grid-cols-2 xl:grid-cols-3 gap-x-3'>
                           {subCategories &&
-                            subCategories.map(({ name }, i) => (
-                              <Link key={i} href='/'>
+                            subCategories.map(({ name, url }, i) => (
+                              <Link key={i} href={`/companies/${slug}/${url}`}>
                                 <a>
                                   <p className='mb-3 hover:underline hover:text-primary transition-all'>
                                     {name}
