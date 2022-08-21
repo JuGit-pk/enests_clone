@@ -71,7 +71,13 @@ const Categories = () => {
                     <Tab.Panel key={i}>
                       <div className='py-10 px-4 shadow-lg'>
                         <div className='pb-8 border-b border-secondary-200'>
-                          <h3 className=' text-2xl text-primary '>{name}</h3>
+                          <Link href={`/company/${slug}`}>
+                            <a>
+                              <h3 className=' text-2xl text-primary '>
+                                {name}
+                              </h3>
+                            </a>
+                          </Link>
                         </div>
                         <div className='pt-4 grid grid-cols-2 xl:grid-cols-3 gap-x-3'>
                           {subCategories &&

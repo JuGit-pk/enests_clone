@@ -26,9 +26,9 @@ module.exports = {
       flex: {
         2: '2 2 0%',
       },
-      // boxShadow: {
-      //   selectBox: "0px 0px 0px 8px rgba(77, 37, 115, 0.7)",
-      // },
+      boxShadow: {
+        selectBox: '0px 0px 8px rgba(77, 37, 115, 0.5)',
+      },
       backgroundImage: {
         footer:
           'linear-gradient(to right, rgba(77, 37, 115, 0.7), rgba(77, 37, 115, 0.7)),url("/assets/images/home.jpg")',

@@ -1,54 +1,54 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Navigation } from 'swiper'
 
-import { IReview } from "../../../types";
-import React from "react";
-import ReviewCard from "./ReviewCard";
-import { sliceIntoChunks } from "@utils/helper";
+import { IReview } from '../../../types'
+import React from 'react'
+import ReviewCard from './ReviewCard'
+import { sliceIntoChunks } from '@utils/helper'
 
 const reviewData = [
   {
-    reviewSite: "AAM Consultants",
+    reviewSite: 'AAM Consultants',
     reviewMsg:
-      "TechnBrains is a reliable company. I have asked them to make an application ...",
-    date: "May 3, 2021",
+      'TechnBrains is a reliable company. I have asked them to make an application ...',
+    date: 'May 3, 2021',
   },
   {
-    reviewSite: "AAM Consultants",
+    reviewSite: 'AAM Consultants',
     reviewMsg:
-      "TechnBrains is a reliable company. I have asked them to make an application ...",
-    date: "May 3, 2021",
+      'TechnBrains is a reliable company. I have asked them to make an application ...',
+    date: 'May 3, 2021',
   },
   {
-    reviewSite: "AAM Consultants",
+    reviewSite: 'AAM Consultants',
     reviewMsg:
-      "TechnBrains is a reliable company. I have asked them to make an application ...",
-    date: "May 3, 2021",
+      'TechnBrains is a reliable company. I have asked them to make an application ...',
+    date: 'May 3, 2021',
   },
   {
-    reviewSite: "AAM Consultants",
+    reviewSite: 'AAM Consultants',
     reviewMsg:
-      "TechnBrains is a reliable company. I have asked them to make an application ...",
-    date: "May 3, 2021",
+      'TechnBrains is a reliable company. I have asked them to make an application ...',
+    date: 'May 3, 2021',
   },
   {
-    reviewSite: "AAM Consultants",
+    reviewSite: 'AAM Consultants',
     reviewMsg:
-      "TechnBrains is a reliable company. I have asked them to make an application ...",
-    date: "May 3, 2021",
+      'TechnBrains is a reliable company. I have asked them to make an application ...',
+    date: 'May 3, 2021',
   },
   {
-    reviewSite: "AAM Consultants",
+    reviewSite: 'AAM Consultants',
     reviewMsg:
-      "TechnBrains is a reliable company. I have asked them to make an application ...",
-    date: "May 3, 2021",
+      'TechnBrains is a reliable company. I have asked them to make an application ...',
+    date: 'May 3, 2021',
   },
-];
-let settings = {
-  infinite: true,
-  rows: 2,
-  slidesPerRow: 2,
-};
+]
+// const settings = {
+//   infinite: true,
+//   rows: 2,
+//   slidesPerRow: 2,
+// }
 const ReviewCardList = () => {
   return (
     // <div className="flex flex-col gap-[14px] py-5 px-[15px] items-center border border-[#dfdede] rounded-[5px] min-w-[340px] overflow-hidden ">
@@ -76,8 +76,8 @@ const ReviewCardList = () => {
         loop
       >
         {sliceIntoChunks(reviewData, 2).map((reviews: IReview[], i: number) => (
-          <SwiperSlide key={i} className=" mt-8">
-            <div key={i} className="flex flex-col space-y-8">
+          <SwiperSlide key={i} className=' mt-8'>
+            <div key={i} className='flex flex-col space-y-8'>
               {reviews.map((review: IReview) => (
                 <ReviewCard key={review.reviewSite} {...review} />
               ))}
@@ -86,7 +86,7 @@ const ReviewCardList = () => {
         ))}
       </Swiper>
     </div>
-  );
-};
+  )
+}
 
-export default ReviewCardList;
+export default ReviewCardList
