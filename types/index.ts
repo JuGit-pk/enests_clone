@@ -1,9 +1,22 @@
 export interface IReview {
-  reviewSite: string
-  reviewMsg: string
-  date: string
+  id: string
+  rating: number
+  review: string
+  user: {
+    username: string
+    firstName: string
+    lastName: string
+    photo: {
+      url: string
+      alternativeText: string
+    }
+  }
+  company: {
+    slug: string
+    name: string
+  }
+  createdAt: string
 }
-
 interface subCategory {
   name: string
   url: string

@@ -37,7 +37,11 @@ const Home: NextPage = () => {
             categoryDescription={data?.home?.categoryDescription}
             categories={data?.popularCategories}
           />
-          <ReviewsContainer />
+          <ReviewsContainer
+            title={data?.homePage?.reviewsTitle}
+            description={data?.homePage?.reviewsDescription}
+            reviews={data?.reviews}
+          />
           <CompanyProfile
             listingTitle={data?.home?.listingTitle}
             listingDescription={data?.home?.listingDescription}

@@ -6,50 +6,12 @@ import React from 'react'
 import ReviewCard from './ReviewCard'
 import { sliceIntoChunks } from '@utils/helper'
 
-const reviewData = [
-  {
-    reviewSite: 'AAM Consultants',
-    reviewMsg:
-      'TechnBrains is a reliable company. I have asked them to make an application ...',
-    date: 'May 3, 2021',
-  },
-  {
-    reviewSite: 'AAM Consultants',
-    reviewMsg:
-      'TechnBrains is a reliable company. I have asked them to make an application ...',
-    date: 'May 3, 2021',
-  },
-  {
-    reviewSite: 'AAM Consultants',
-    reviewMsg:
-      'TechnBrains is a reliable company. I have asked them to make an application ...',
-    date: 'May 3, 2021',
-  },
-  {
-    reviewSite: 'AAM Consultants',
-    reviewMsg:
-      'TechnBrains is a reliable company. I have asked them to make an application ...',
-    date: 'May 3, 2021',
-  },
-  {
-    reviewSite: 'AAM Consultants',
-    reviewMsg:
-      'TechnBrains is a reliable company. I have asked them to make an application ...',
-    date: 'May 3, 2021',
-  },
-  {
-    reviewSite: 'AAM Consultants',
-    reviewMsg:
-      'TechnBrains is a reliable company. I have asked them to make an application ...',
-    date: 'May 3, 2021',
-  },
-]
 // const settings = {
 //   infinite: true,
 //   rows: 2,
 //   slidesPerRow: 2,
 // }
-const ReviewCardList = () => {
+const ReviewCardList = ({ reviews }: { reviews: IReview[] }) => {
   return (
     // <div className="flex flex-col gap-[14px] py-5 px-[15px] items-center border border-[#dfdede] rounded-[5px] min-w-[340px] overflow-hidden ">
     //   <Swiper
@@ -75,11 +37,11 @@ const ReviewCardList = () => {
         autoplay={{ delay: 3000 }}
         loop
       >
-        {sliceIntoChunks(reviewData, 2).map((reviews: IReview[], i: number) => (
+        {sliceIntoChunks(reviews, 2).map((reviews: IReview[], i: number) => (
           <SwiperSlide key={i} className=' mt-8'>
             <div key={i} className='flex flex-col space-y-8'>
               {reviews.map((review: IReview) => (
-                <ReviewCard key={review.reviewSite} {...review} />
+                <ReviewCard review={review} key={review.id} />
               ))}
             </div>
           </SwiperSlide>
