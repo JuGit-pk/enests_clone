@@ -2,9 +2,12 @@ import { gql } from '@apollo/client'
 
 export const COMPANIES_LISTING_QUERY = gql`
   query subCategoriesCompanies(
-    $category: String
+    $category: String!
     $categorySlug: String!
     $subCategory: String!
+    $limit: Int
+    $offset: Int
+    $where: JSON
   ) {
     subCategoriesCompanyCount(category: $category) {
       _id
@@ -23,7 +26,7 @@ export const COMPANIES_LISTING_QUERY = gql`
       name
       alpha2Code
     }
-    companies {
+    companies(limit: $limit, start: $offset, where: $where) {
       name
       subCategory
       tagline
@@ -47,5 +50,6 @@ export const COMPANIES_LISTING_QUERY = gql`
         }
       }
     }
+    companiesCount(where: $where)
   }
 `

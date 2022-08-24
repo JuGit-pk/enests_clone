@@ -1,10 +1,13 @@
-import { NextPage } from 'next'
 import React from 'react'
-import Container from '../components/layout/Container/index'
-import { ABOUT_PAGE_QUERY } from '@graphql/queries/getAboutPage'
+
+import { NextPage } from 'next'
+
 import { useQuery } from '@apollo/client'
-import Layout from '@components/layout/Layout'
 import Header from '@components/layout/Header'
+import Layout from '@components/layout/Layout'
+import { ABOUT_PAGE_QUERY } from '@graphql/queries/getAboutPage'
+
+import Container from '../components/layout/Container/index'
 
 const About: NextPage = () => {
   const { data, loading } = useQuery(ABOUT_PAGE_QUERY)
@@ -12,7 +15,7 @@ const About: NextPage = () => {
   return (
     <>
       {loading ? (
-        <p>Loading ...</p>
+        <p>Loading 🏃‍♀️🏃🏃‍♂️💨</p>
       ) : (
         <Layout>
           <Header

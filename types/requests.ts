@@ -48,4 +48,5 @@ export interface ICompaniesListingQuery {
   }
   countries: ICountry[]
   companies: ICompany[]
+  companiesCount: number
 }

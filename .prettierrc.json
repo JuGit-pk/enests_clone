@@ -8,5 +8,20 @@
 
   "endOfLine": "lf",
   "printWidth": 80,
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "importOrder": [
+    "^react",
+    "^next",
+    "^@?\\w",
+    "^(@|components)(/.*|$)",
+    "^\\u0000",
+    "^\\.\\.(?!/?$)",
+    "^\\.\\./?$",
+    "^\\./(?=.*/)(?!/?$)",
+    "^\\.(?!/?$)",
+    "^\\./?$",
+    "^.+\\.?(css)$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

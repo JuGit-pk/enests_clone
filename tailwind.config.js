@@ -28,6 +28,7 @@ module.exports = {
       },
       boxShadow: {
         selectBox: '0px 0px 8px rgba(77, 37, 115, 0.5)',
+        paginator: '0 0 0 0.2rem rgba(0, 123, 255, 0.25)',
       },
       backgroundImage: {
         footer:

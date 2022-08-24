@@ -20,7 +20,6 @@ const CompanyCard: React.FC<ICompanyCardProps> = ({ company }) => {
     website,
     logo,
   } = company
-  console.log(companySize, ' companySize')
   return (
     <div className='border border-secondary-300 px-7 py-9 gap-x-4 my-8 rounded-md flex flex-col md:flex-row'>
       <div className=' text-center w-[13%] relative'>
