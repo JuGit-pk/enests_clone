@@ -86,7 +86,7 @@ export const Companies = () => {
   }, [currentPage, totalCompanies])
   // filtration of countries based on the query
   useEffect(() => {
-    if (data && router.query) {
+    if (router.query) {
       if (router.query.category) {
         setFilter({
           'category.slug': router.query.category as string,
