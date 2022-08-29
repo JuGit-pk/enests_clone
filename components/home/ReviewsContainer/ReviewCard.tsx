@@ -1,8 +1,9 @@
-import { FaClock } from 'react-icons/fa'
 import React from 'react'
+import { FaClock } from 'react-icons/fa'
 import Rating from 'react-rating'
-import _ from 'lodash'
+
 import { formatDate } from '@utils/helper'
+import _ from 'lodash'
 
 interface IReview {
   id: string
