@@ -5,9 +5,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MenuIcon from '/public/assets/svgs/hamburger.svg'
 import cn from 'classnames'
+import RegisterUser from '@components/RegisterUser'
 
 const Navbar = () => {
+  const [showRegisterModal, setShowRegisterModal] = useState(false)
   const [menuIsOpen, setMenuIsOpen] = useState(false)
+
   return (
     <nav className='w-full py-[22px] border-b border-white/40 font-light'>
       <Container>
@@ -40,7 +43,10 @@ const Navbar = () => {
               </span>
               <span>|</span>
               <Link href='/'>
-                <a className='hover:text-white/80 transition-all py-2 px-4 '>
+                <a
+                  onClick={() => setShowRegisterModal(true)}
+                  className='hover:text-white/80 transition-all py-2 px-4 '
+                >
                   Register
                 </a>
               </Link>
@@ -56,6 +62,12 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
+          {showRegisterModal && (
+            <RegisterUser
+              showModal={showRegisterModal}
+              setShowModal={setShowRegisterModal}
+            />
+          )}
 
           {/* mobile menu */}
           <div
@@ -94,7 +106,10 @@ const Navbar = () => {
                 </span>
                 <span>|</span>
                 <Link href='/'>
-                  <a className='hover:text-white/80 transition-all py-2 px-4 '>
+                  <a
+                    onClick={() => setShowRegisterModal(true)}
+                    className='hover:text-white/80 transition-all py-2 px-4 '
+                  >
                     Register
                   </a>
                 </Link>

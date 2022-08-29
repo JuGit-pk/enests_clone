@@ -38,3 +38,7 @@ export const formatDate = (timestamp: string) => {
     months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
   )
 }
+
+export const slugify = (string: string) => {
+  return string.toLowerCase().trim().replace(/\s+/g, '-')
+}
