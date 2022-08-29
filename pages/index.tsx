@@ -1,19 +1,22 @@
+import type { NextPage } from 'next'
+
+import { useQuery } from '@apollo/client'
+import { HOME_PAGE_QUERY } from '@graphql/queries/getHomePage'
+
 import About from '../components/home/About'
 import BlogPost from '../components/home/BlogPost'
 import BrowseCategories from '../components/home/BrowseCategories'
 import CompanyProfile from '../components/home/CompanyProfile'
 import Hero from '../components/home/Hero'
-import Layout from '../components/layout/Layout'
-import type { NextPage } from 'next'
-
-import { HOME_PAGE_QUERY } from '@graphql/queries/getHomePage'
 import ReviewsContainer from '../components/home/ReviewsContainer'
-import { useQuery } from '@apollo/client'
 import Navbar from '../components/layout/Header/Navbar'
+import Layout from '../components/layout/Layout'
+
 const Home: NextPage = () => {
-  const { data, loading } = useQuery(HOME_PAGE_QUERY)
+  const { data, loading, error } = useQuery(HOME_PAGE_QUERY)
   return (
     <>
+      {error && <p>ERROR here 🫤</p>}
       {loading ? (
         <p>Loading</p>
       ) : (

@@ -15,13 +15,14 @@ interface IQueryResponse {
   categories: ICategory[]
 }
 const Categories = () => {
-  const { data, loading } = useQuery<IQueryResponse>(CATEGORIES_QUERY)
+  const { data, loading, error } = useQuery<IQueryResponse>(CATEGORIES_QUERY)
 
   return (
     <Layout>
       <Header heading='Categories' subHeading='Categories' />
       <Container>
         <main className='h-full w-full inline-grid  md:grid md:grid-cols-3 md:gap-x-8 font-lato text-secondary-500 py-20'>
+          {error && <p>ERROR here 🫤</p>}
           {loading && <p>Loading 🏃‍♀️🏃🏃‍♂️💨</p>}
 
           {data && (
@@ -77,7 +78,7 @@ const Categories = () => {
                         <Tab.Panel key={i}>
                           <div className='py-10 px-4 shadow-lg'>
                             <div className='pb-8 border-b border-secondary-200'>
-                              <Link href={`/company/${categorySlug}`}>
+                              <Link href={`/companies/${categorySlug}`}>
                                 <a>
                                   <h3 className=' text-2xl text-primary '>
                                     {name}
@@ -91,7 +92,7 @@ const Categories = () => {
                                   ({ name, url: subCategorySlug }, i) => (
                                     <Link
                                       key={i}
-                                      href={`/company/${categorySlug}/${subCategorySlug}`}
+                                      href={`/companies/${categorySlug}/${subCategorySlug}`}
                                     >
                                       <a>
                                         <p className='mb-3 hover:underline hover:text-primary transition-all'>

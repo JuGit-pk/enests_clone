@@ -10,10 +10,11 @@ import { ABOUT_PAGE_QUERY } from '@graphql/queries/getAboutPage'
 import Container from '../components/layout/Container/index'
 
 const About: NextPage = () => {
-  const { data, loading } = useQuery(ABOUT_PAGE_QUERY)
+  const { data, loading, error } = useQuery(ABOUT_PAGE_QUERY)
 
   return (
     <>
+      {error && <p>ERROR here 🫤</p>}
       {loading ? (
         <p>Loading 🏃‍♀️🏃🏃‍♂️💨</p>
       ) : (
